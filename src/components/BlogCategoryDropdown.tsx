@@ -2,13 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { BLOGS, ROUTES } from '@/lib/site';
 
 const BlogCategoryDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
-  const categories = [
-    { name: 'Account & Login', href: '/blog/create-card-rummy-account-and-login' },
-  ];
 
   return (
     <div className="relative mb-8">
@@ -16,29 +13,28 @@ const BlogCategoryDropdown = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full md:w-64 px-4 py-2 bg-secondary text-white rounded-md"
       >
-        <span>Select Category</span>
+        <span>Select a guide</span>
         <svg
           className={`w-5 h-5 transition-transform ${isOpen ? 'transform rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      
+
       {isOpen && (
         <div className="absolute z-10 w-full md:w-64 mt-1 bg-secondary rounded-md shadow-lg">
           <ul className="py-1">
-            {categories.map((category) => (
-              <li key={category.name}>
-                <Link 
-                  href={category.href}
+            {BLOGS.map((post) => (
+              <li key={post.slug}>
+                <Link
+                  href={`${ROUTES.blog}/${post.slug}`}
                   className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
                   onClick={() => setIsOpen(false)}
                 >
-                  {category.name}
+                  {post.title}
                 </Link>
               </li>
             ))}
@@ -49,4 +45,4 @@ const BlogCategoryDropdown = () => {
   );
 };
 
-export default BlogCategoryDropdown; 
+export default BlogCategoryDropdown;

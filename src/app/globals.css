@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 2, 6, 23;
-  --background-end-rgb: 2, 6, 23;
+  --background-start-rgb: 12, 10, 20;
+  --background-end-rgb: 12, 10, 20;
 }
 
 body {
@@ -21,6 +21,7 @@ body {
 /* Prevent CLS by ensuring images don't shift layout */
 img {
   max-width: 100%;
+  width: auto;
   height: auto;
 }
 

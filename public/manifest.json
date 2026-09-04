@@ -1,11 +1,11 @@
 {
-  "name": "Card Rummy",
-  "short_name": "Card Rummy",
-  "description": "Pakistan's premier card gaming platform offering Teen Patti, Rummy, Dragon vs Tiger and more. Earn real cash rewards!",
+  "name": "Teen Patti Show",
+  "short_name": "Teen Patti Show",
+  "description": "Pakistani Android card lobby for Teen Patti, JazzCash, and EasyPaisa wallet play.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#06091F",
-  "theme_color": "#06091F",
+  "background_color": "#0C0A14",
+  "theme_color": "#0C0A14",
   "icons": [
     {
       "src": "/favicon.ico",
@@ -13,10 +13,10 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/card-rummy.webp",
+      "src": "/teen-patti-show.webp",
       "sizes": "512x512",
       "type": "image/webp",
       "purpose": "any maskable"
     }
   ]
-} 
+}

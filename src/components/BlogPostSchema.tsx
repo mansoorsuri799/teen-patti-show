@@ -1,6 +1,5 @@
 import { imageObjectLicensing } from "@/lib/schemaImageLicensing";
-
-const BASE = "https://cardrummyapp.com.pk";
+import { IMAGES, SITE_NAME, SITE_ORIGIN } from "@/lib/site";
 
 function safeJsonLd(obj: object): string {
   return JSON.stringify(obj).replace(/</g, "\\u003c");
@@ -14,7 +13,6 @@ type BlogPostSchemaProps = {
   dateModified?: string;
   image?: string;
   breadcrumbOnly?: boolean;
-  /** Key summary or first 2-3 paragraphs for AI parsing and articleBody */
   articleBody?: string;
 };
 
@@ -24,17 +22,17 @@ export default function BlogPostSchema({
   slug,
   datePublished,
   dateModified,
-  image = `${BASE}/card-rummy.webp`,
+  image = `${SITE_ORIGIN}${IMAGES.logo}`,
   breadcrumbOnly = false,
   articleBody,
 }: BlogPostSchemaProps) {
-  const url = `${BASE}/blog/${slug}`;
+  const url = `${SITE_ORIGIN}/blog/${slug}`;
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE}/blog` },
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_ORIGIN}/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_ORIGIN}/blog` },
       { "@type": "ListItem", position: 3, name: title, item: url },
     ],
   };
@@ -46,21 +44,21 @@ export default function BlogPostSchema({
     description,
     url,
     image,
-    author: { "@type": "Organization", name: "Card Rummy", url: BASE },
+    author: { "@type": "Organization", name: SITE_NAME, url: SITE_ORIGIN },
     publisher: {
       "@type": "Organization",
-      name: "Card Rummy",
+      name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE}/card-rummy.webp`,
+        url: `${SITE_ORIGIN}${IMAGES.logo}`,
         ...imageObjectLicensing,
-        creditText: "Card Rummy logo",
+        creditText: `${SITE_NAME} logo`,
       },
     },
     datePublished,
     dateModified: dateModified || datePublished,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    inLanguage: "en-US",
+    inLanguage: "en",
     ...(articleBody && { articleBody }),
   };
   return (

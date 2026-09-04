@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useMobileMenu } from './MobileMenuProvider';
 import CtaButton from './CtaButton';
+import { APP_FACTS, IMAGES, ROUTES, SITE_NAME } from '@/lib/site';
 
 type NavItem = {
   href: string;
@@ -38,7 +39,7 @@ const navSections: NavSection[] = [
         ),
       },
       {
-        href: '/download-card-rummy',
+        href: ROUTES.download,
         label: 'Download',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -52,7 +53,7 @@ const navSections: NavSection[] = [
     title: 'GUIDES',
     items: [
       {
-        href: '/deposit-money-in-card-rummy',
+        href: ROUTES.deposit,
         label: 'Deposit Guide',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -61,7 +62,7 @@ const navSections: NavSection[] = [
         ),
       },
       {
-        href: '/withdraw-money-from-card-rummy',
+        href: ROUTES.withdraw,
         label: 'Withdraw Guide',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -70,7 +71,7 @@ const navSections: NavSection[] = [
         ),
       },
       {
-        href: '/card-rummy-for-pc',
+        href: ROUTES.pc,
         label: 'PC Version',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -186,15 +187,15 @@ export default function MobileNavigation() {
             <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
               <div className="relative w-9 h-9 flex-shrink-0 rounded-lg overflow-hidden">
                 <Image
-                  src="/card-rummy.webp"
-                  alt="Card Rummy Logo"
+                  src={IMAGES.logo}
+                  alt={`${SITE_NAME} logo`}
                   fill
                   sizes="36px"
                   className="object-contain"
                   priority
                 />
               </div>
-              <span className="text-white text-lg font-bold tracking-tight">Card Rummy</span>
+              <span className="text-white text-lg font-bold tracking-tight">{SITE_NAME}</span>
             </Link>
             <button
               onClick={closeMenu}
@@ -216,7 +217,7 @@ export default function MobileNavigation() {
 
           {/* Nav sections */}
           <div className="relative flex-1 overflow-y-auto">
-            <div className="absolute right-0 top-0 bottom-0 w-1 bg-[#0BA5E9]" aria-hidden="true" />
+            <div className="absolute right-0 top-0 bottom-0 w-1 bg-cta" aria-hidden="true" />
 
             <nav className="px-5 py-2 pb-6">
               {navSections.map((section) => (
@@ -259,11 +260,11 @@ export default function MobileNavigation() {
 
           {/* Footer CTA */}
           <div className="px-5 pt-4 pb-8 border-t border-gray-800/80 flex flex-col items-center">
-            <CtaButton onClick={closeMenu} ariaLabel="Download Card Rummy app for Android">
+            <CtaButton onClick={closeMenu} ariaLabel={`Download ${SITE_NAME} for Android`}>
               DOWNLOAD NOW
             </CtaButton>
             <p className="text-center text-gray-500 text-xs mt-3">
-              49MB · Android 5.0+ · V1.231 (2026 Update)
+              {APP_FACTS.size} · {APP_FACTS.os} · v{APP_FACTS.version}
             </p>
           </div>
         </div>

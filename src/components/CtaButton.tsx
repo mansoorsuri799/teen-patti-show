@@ -1,7 +1,7 @@
 import Link from 'next/link';
+import { APP_DOWNLOAD_URL } from '@/lib/site';
 
-export const DOWNLOAD_URL =
-  'https://pkcardrummy.com/?from_gameid=6276686&channelCode=6191689';
+export const DOWNLOAD_URL = APP_DOWNLOAD_URL;
 
 type IconKind = 'download' | 'arrow' | 'mail';
 
@@ -35,7 +35,7 @@ const ICONS: Record<IconKind, React.ReactNode> = {
 };
 
 const baseClass =
-  'download-btn inline-flex items-center justify-center px-8 py-4 text-white font-semibold text-lg rounded-full border-2 border-[#0BA5E9] bg-transparent hover:bg-[#0BA5E9]/10 transition-all group';
+  'download-btn inline-flex items-center justify-center px-8 py-4 text-white font-semibold text-lg rounded-full border-2 border-cta bg-transparent hover:bg-cta/10 transition-all group';
 
 function ButtonInner({
   children,
@@ -47,7 +47,7 @@ function ButtonInner({
   return (
     <>
       <span className="text-left leading-tight">{children}</span>
-      <div className="download-icon ml-3 bg-[#f97316] rounded-full p-2 group-hover:scale-110 transition-transform text-white">
+      <div className="download-icon ml-3 bg-brand-orange rounded-full p-2 group-hover:scale-110 transition-transform text-white">
         {ICONS[icon]}
       </div>
     </>

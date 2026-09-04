@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import CtaButton from '@/components/CtaButton';
 
 export const metadata: Metadata = {
-  title: 'Page Not Found - Card Rummy',
-  description: 'The page you are looking for does not exist. Return to Card Rummy homepage.',
+  title: 'Page Not Found',
+  description: 'This Teen Patti Show page does not exist. Return to the homepage.',
   robots: {
     index: false,
     follow: true,

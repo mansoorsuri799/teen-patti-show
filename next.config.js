@@ -27,48 +27,41 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // /about was indexed by Google but the real page is /about-us
-      {
-        source: '/about',
-        destination: '/about-us',
-        permanent: true,
-      },
-      {
-        source: '/blog/create-account-login',
-        destination: '/blog/create-card-rummy-account-and-login',
-        permanent: true,
-      },
-      // Malformed URLs Google crawled — send them home
-      {
-        source: '/\\$',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/\\&',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/og-image.webp',
-        destination: '/feature/og-image.webp',
-        permanent: true,
-      },
-      {
-        source: '/og-image-square.webp',
-        destination: '/feature/og-image-square.webp',
-        permanent: true,
-      },
-      {
-        source: '/twitter-card.webp',
-        destination: '/feature/twitter-card.webp',
-        permanent: true,
-      },
-      {
-        source: '/card-rummy-logo.webp',
-        destination: '/card-rummy.webp',
-        permanent: true,
-      },
+      { source: '/about', destination: '/about-us', permanent: true },
+      { source: '/download-card-rummy', destination: '/download-teen-patti-show', permanent: true },
+      { source: '/deposit-money-in-card-rummy', destination: '/deposit-money-in-teen-patti-show', permanent: true },
+      { source: '/withdraw-money-from-card-rummy', destination: '/withdraw-money-from-teen-patti-show', permanent: true },
+      { source: '/card-rummy-for-pc', destination: '/teen-patti-show-for-pc', permanent: true },
+      { source: '/blog/create-account-login', destination: '/blog/teen-patti-show-account-and-login', permanent: true },
+      { source: '/blog/create-card-rummy-account-and-login', destination: '/blog/teen-patti-show-account-and-login', permanent: true },
+      { source: '/blog/is-card-rummy-real-or-fake', destination: '/blog/is-teen-patti-show-real-pakistan', permanent: true },
+      { source: '/blog/is-card-rummy-safe-legal-pakistan', destination: '/blog/is-teen-patti-show-real-pakistan', permanent: true },
+      { source: '/blog/card-rummy-app-review-2026', destination: '/blog/is-teen-patti-show-real-pakistan', permanent: true },
+      { source: '/blog/card-rummy-bonuses-vip-guide', destination: '/blog/teen-patti-show-welcome-bonus-referral', permanent: true },
+      { source: '/blog/card-rummy-referral-program', destination: '/blog/teen-patti-show-welcome-bonus-referral', permanent: true },
+      { source: '/blog/ways-to-earn-money-with-card-rummy-2026', destination: '/blog/teen-patti-show-welcome-bonus-referral', permanent: true },
+      { source: '/blog/tips-to-win-big-in-card-rummy', destination: '/blog/teen-patti-show-tips-how-to-play', permanent: true },
+      { source: '/blog/card-rummy-tips-10-smart-tricks', destination: '/blog/teen-patti-show-tips-how-to-play', permanent: true },
+      { source: '/blog/how-to-use-card-rummy-app-pakistan-guide-2026', destination: '/blog/teen-patti-show-tips-how-to-play', permanent: true },
+      { source: '/blog/responsible-gaming-guide-card-rummy', destination: '/blog/teen-patti-show-tips-how-to-play', permanent: true },
+      { source: '/blog/dragon-vs-tiger-andar-bahar-high-payout-games', destination: '/blog/teen-patti-show-tips-how-to-play', permanent: true },
+      { source: '/blog/ips-exceed-issue-card-rummy-how-to-fix', destination: '/download-teen-patti-show', permanent: true },
+      { source: '/blog/card-rummy-old-version-features-review-2026', destination: '/download-teen-patti-show', permanent: true },
+      { source: '/blog/card-rummy-latest-version-new-features-2026-updates', destination: '/download-teen-patti-show', permanent: true },
+      { source: '/blog/3patti-blue-vs-card-rummy', destination: '/blog', permanent: true },
+      { source: '/blog/3patti-gold-vs-card-rummy', destination: '/blog', permanent: true },
+      { source: '/blog/3patti-lucky-vs-card-rummy', destination: '/blog', permanent: true },
+      { source: '/blog/3patti-room-vs-card-rummy', destination: '/blog', permanent: true },
+      { source: '/sitemap.xml', destination: '/index.xml', permanent: true },
+      { source: '/api/sitemap', destination: '/index.xml', permanent: true },
+      { source: '/api/robots', destination: '/robots.txt', permanent: true },
+      { source: '/\\$', destination: '/', permanent: true },
+      { source: '/\\&', destination: '/', permanent: true },
+      { source: '/og-image.webp', destination: '/feature/og-image.webp', permanent: true },
+      { source: '/og-image-square.webp', destination: '/feature/og-image-square.webp', permanent: true },
+      { source: '/twitter-card.webp', destination: '/feature/twitter-card.webp', permanent: true },
+      { source: '/card-rummy-logo.webp', destination: '/teen-patti-show.webp', permanent: true },
+      { source: '/card-rummy.webp', destination: '/teen-patti-show.webp', permanent: true },
     ];
   },
 
@@ -79,10 +72,10 @@ const nextConfig = {
         source: '/.well-known/:path*',
         destination: '/public/.well-known/:path*',
       },
-      // Redirect old 3Patti Blue logo to Card Rummy logo
+      // Legacy logo filename
       {
         source: '/3-patti-blue-logo.webp',
-        destination: '/card-rummy.webp',
+        destination: '/teen-patti-show.webp',
       },
     ];
   },

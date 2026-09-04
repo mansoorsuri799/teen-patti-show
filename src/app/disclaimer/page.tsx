@@ -1,147 +1,59 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import CtaButton from '@/components/CtaButton';
+import type { Metadata } from "next";
+import Link from "next/link";
+import CtaButton from "@/components/CtaButton";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { ROUTES, SITE_HOST, SITE_NAME, SITE_ORIGIN } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: 'Disclaimer - Card Rummy | Legal Information',
-  description: 'Read the disclaimer for Card Rummy. Important legal information about the use of this blog and third-party platforms.',
-  keywords: ['Card Rummy disclaimer', 'legal disclaimer', 'terms', 'conditions', 'gambling disclaimer'],
+  title: "Disclaimer",
+  description: "Teen Patti Show website disclaimer: informational guides, real-money risk, and no income guarantee.",
+  alternates: { canonical: `${SITE_ORIGIN}${ROUTES.disclaimer}` },
   openGraph: {
-    title: 'Disclaimer - Card Rummy',
-    description: 'Legal disclaimer and important information about Card Rummy.',
-    url: 'https://cardrummyapp.com.pk/disclaimer',
-    siteName: 'Card Rummy',
-    type: 'website',
+    title: "Disclaimer | Teen Patti Show",
+    description: "Legal notice for teenpattishowgame.com.pk.",
+    url: `${SITE_ORIGIN}${ROUTES.disclaimer}`,
+    siteName: SITE_NAME,
+    type: "website",
   },
-  twitter: {
-    card: 'summary',
-    title: 'Disclaimer - Card Rummy',
-    description: 'Legal disclaimer and important information about Card Rummy.',
-  },
-  alternates: {
-    canonical: 'https://cardrummyapp.com.pk/disclaimer',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  }
 };
 
 export default function Disclaimer() {
   return (
     <div className="min-h-screen bg-primary py-12 px-4">
-      <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto">
-          {/* Hero Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Disclaimer</h1>
-            <p className="text-lg text-gray-400">Please read this disclaimer carefully before using our website</p>
-          </div>
-          
-          {/* Main Content */}
-          <div className="bg-secondary rounded-2xl shadow-xl p-8 md:p-12">
-            <div className="prose prose-lg max-w-none">
-              {/* Warning Banner */}
-              <div className="bg-[#0A1029] border-l-4 border-accent p-6 mb-8 rounded-r-lg">
-                <div className="flex items-start">
-                  <svg className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"></path>
-                  </svg>
-                  <div>
-                    <h3 className="text-xl font-bold text-accent mb-2">Important Notice</h3>
-                    <p className="text-accent mb-0">
-                      Please read this disclaimer carefully. By using this website, you agree to the terms outlined below.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Main Disclaimer Content */}
-              <div className="space-y-6 text-gray-300">
-                <p className="text-lg leading-relaxed">
-                  The information provided on this blog (<a href="https://www.cardrummyapp.com.pk" className="text-accent hover:text-accent font-semibold" target="_blank" rel="noopener noreferrer">www.cardrummyapp.com.pk</a>) about <Link href="/" className="text-accent hover:underline font-semibold">Card Rummy</Link> is for <strong>general informational and entertainment purposes only</strong>. We do not host, promote, or encourage any form of gambling or betting activities.
-                </p>
-
-                <div className="bg-[#0A1029] rounded-xl p-6 border border-accent">
-                  <h2 className="text-2xl font-bold mb-4 text-white">⚠️ Important Warnings</h2>
-                  <ul className="space-y-3 text-gray-300">
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2 font-bold">•</span>
-                      <span>Card Rummy is a card game that may involve <strong>real money</strong> when played on certain platforms.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2 font-bold">•</span>
-                      <span>Users are advised to be aware of their <strong>local laws and regulations</strong> related to online gaming and gambling before engaging with any app or website mentioned.</span>
-                    </li>
-              </ul>
-                </div>
-
-                <div className="bg-[#0A1029] rounded-xl p-6 border border-red-200">
-                  <h2 className="text-2xl font-bold mb-4 text-red-400">🚫 No Liability</h2>
-                  <p className="text-gray-300 leading-relaxed mb-0">
-                    We are <strong>not responsible</strong> for any loss, risk, or legal issues resulting from the use of third-party platforms. All app names, logos, and trademarks belong to their respective owners, and we do not claim any affiliation or endorsement.
-                  </p>
-                </div>
-
-                <div className="bg-[#0A1029] rounded-xl p-6 border border-blue-200">
-                  <h2 className="text-2xl font-bold mb-4 text-blue-400">📋 User Responsibility</h2>
-                  <p className="text-gray-300 leading-relaxed mb-0">
-                    By using this blog, you agree that any actions you take based on the content are <strong>strictly at your own risk</strong>. We encourage all users to:
-                  </p>
-                  <ul className="mt-4 space-y-2 text-gray-300">
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      <span>Verify local laws before engaging with any gaming platform</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      <span>Play responsibly and within your means</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      <span>Be aware of the risks involved in real money gaming</span>
-                </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      <span>Seek professional help if you have gambling concerns</span>
-                </li>
-              </ul>
-                </div>
-
-                <div className="bg-[#0A1029] rounded-xl p-6 border border-accent">
-                  <h2 className="text-2xl font-bold mb-4 text-white">™️ Trademarks & Affiliations</h2>
-                  <p className="text-gray-300 leading-relaxed mb-0">
-                    All app names, logos, and trademarks mentioned on this website belong to their respective owners. We do not claim any affiliation, endorsement, or partnership with any of the apps or platforms mentioned on this blog.
-                  </p>
-                </div>
-              </div>
-
-              {/* Contact Section */}
-              <div className="mt-12 p-6 bg-secondary rounded-xl border-2 border-accent">
-                <h2 className="text-2xl font-bold mb-4 text-white">Questions?</h2>
-                <p className="text-gray-300 mb-4">
-                  If you have any questions about this Disclaimer, please feel free to contact us.
-                </p>
-                <CtaButton href="/contact-us" icon="arrow">Contact Us</CtaButton>
-              </div>
-            </div>
-          </div>
+      <div className="container mx-auto max-w-4xl">
+        <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Disclaimer", href: ROUTES.disclaimer }]} />
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white">Disclaimer</h1>
+        <div className="bg-secondary rounded-2xl p-8 md:p-12 space-y-6 text-gray-300">
+          <p className="text-lg leading-relaxed">
+            {SITE_HOST} publishes how-to and review copy about {SITE_NAME}. The pages are for information. They are not a licence, a broker, or a promise that you will leave a table with more PKR than you added.
+          </p>
+          <section className="bg-primary rounded-xl p-6">
+            <h2 className="text-2xl font-bold text-white mb-3">Real-money play</h2>
+            <p>
+              Teen Patti Show tables can use real money. You can lose the amount you deposit. Online card play sits in a legal grey area in Pakistan. Check the rules that apply to you before you install the APK or add a wallet.
+            </p>
+          </section>
+          <section className="bg-primary rounded-xl p-6">
+            <h2 className="text-2xl font-bold text-white mb-3">No earnings guarantee</h2>
+            <p>
+              Welcome bonuses, rebates, and referral cuts are described as they appear in the lobby. They are not a wage. Wagering can delay a cash-out. We will not invent “daily income” figures.
+            </p>
+          </section>
+          <section className="bg-primary rounded-xl p-6">
+            <h2 className="text-2xl font-bold text-white mb-3">Third-party marks</h2>
+            <p>
+              JazzCash, EasyPaisa, Android, BlueStacks, and other product names belong to their owners. Mention on this site is for identification, not a partnership claim.
+            </p>
+          </section>
+          <section className="bg-primary rounded-xl p-6">
+            <h2 className="text-2xl font-bold text-white mb-3">Your risk</h2>
+            <p>
+              If you follow a step and a payment fails, or a table goes against you, that outcome is yours. For site errors, use the <Link href={ROUTES.contact} className="text-accent hover:underline">contact page</Link>. Read the <Link href={ROUTES.privacy} className="text-accent hover:underline">privacy policy</Link> for how we handle mail.
+            </p>
+          </section>
+          <CtaButton href={ROUTES.contact} icon="arrow">Contact Us</CtaButton>
         </div>
       </div>
-
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Disclaimer - Card Rummy",
-            "description": "Legal disclaimer and important information about Card Rummy website.",
-            "url": "https://cardrummyapp.com.pk/disclaimer"
-          })
-        }}
-      />
     </div>
   );
-} 
+}
